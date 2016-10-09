@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from apis.serializer import GameDetailView,GameListView
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/games_list/$',GameListView.as_view(),name='GAME_LIST_API'),
+    url(r'^api/game_details/$',GameDetailView.as_view(),name='GAME_DETAILS_API'),
 ]
