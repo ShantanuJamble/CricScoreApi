@@ -57,13 +57,9 @@ class WebScrapper(object):
                     dic["team_2"] += " " + t
                 # to remove space at 0th index
                 # to do : remove trailing spaces
-                tmp = list(dic["team_1"])
-                tmp[0] = ''
-                dic["team_1"] = ''.join(tmp)
 
-                tmp = list(dic["team_2"])
-                tmp[0] = ''
-                dic["team_2"] = ''.join(tmp)
+                dic["team_1"] = (dic["team_1"]).strip()
+                dic["team_2"]=(dic["team_2"]).strip()
 
                 dic["status"] = match_status
                 # dic["code"] = match_code
